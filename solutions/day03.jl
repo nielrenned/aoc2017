@@ -17,9 +17,7 @@ function part2(input::Int)
     end
 end
 
-function neighbors(p::Tuple{Int64, Int64})::Array{Tuple{Int64, Int64}}
-    [p .+ Δ for Δ ∈ [(-1, 0), (0, -1), (1, 0), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]]
-end
+neighbors(p) = [p .+ Δ for Δ ∈ [(-1, 0), (0, -1), (1, 0), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]]
 
 function spiral_coords(i::Int)::Tuple{Int64, Int64}
     s::Int = ceil(sqrt(i))
